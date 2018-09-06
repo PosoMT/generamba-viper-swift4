@@ -1,0 +1,34 @@
+{% include 'header' %}
+
+import UIKit
+
+//MARK: Assembly -
+protocol {{ module_info.name }}Assembly: class {
+    static func createModule(assembly: ApplicationAssembly) -> UIViewController
+}
+
+//MARK: Presenter -
+protocol {{ module_info.name }}Presenter: class {
+    func getTestList()
+}
+
+//MARK: Interactor -
+protocol {{ module_info.name }}Interactor: class {
+    func getInfoForList()
+}
+
+//MARK: InteractorOutput -
+protocol {{ module_info.name }}InteractorOutput: class {
+    func presentInfo(info: String)
+}
+
+//MARK: View -
+protocol {{ module_info.name }}View: class {
+    var presenter: {{ module_info.name }}Presenter? { get set }
+    func showInfo(info: String)
+}
+
+//MARK: Router -
+protocol {{ module_info.name }}Router: class {
+    func presentArcticle()
+}

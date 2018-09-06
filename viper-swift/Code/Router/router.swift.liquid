@@ -1,0 +1,18 @@
+{% include 'header' %}
+
+import UIKit
+
+final class {{ module_info.name }}RouterImpl: {{ module_info.name }}Router {
+    weak var viewController: UIViewController!
+    private let assembly: ApplicationAssembly
+
+    init(assembly: ApplicationAssembly) {
+    	self.assembly = assembly
+    }
+
+    // MARK: - Router
+    func presentArcticle() {
+    	// let vc = OrderPassHistoryAssemblyImpl.createModule(assembly: assembly, accessLevel: accessLevel)
+        // self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+}

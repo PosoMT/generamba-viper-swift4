@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+class {{ module_info.name }}InteractorImpl: {{ module_info.name }}Interactor {
+
+	weak var output: {{ module_info.name }}InteractorOutput?
+
+	// MARK: {{ module_info.name }}Interactor
+	func getInfoForList() {
+		//calling some services to get info
+		let info = "Is that true VIPER?"
+		output?.presentInfo(info: info)
+	}
+}

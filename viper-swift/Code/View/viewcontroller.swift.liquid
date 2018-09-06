@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+import UIKit
+
+class {{ module_info.name }}ViewController: UIViewController, {{ module_info.name }}View {
+
+    var presenter: {{ module_info.name }}Presenter?
+
+    // MARK: Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    // MARK: {{ module_info.name }}View
+    func showInfo(info: String) {
+    	print("{{ module_info.name }}ViewController showing \(info)")
+    }
+    
+}

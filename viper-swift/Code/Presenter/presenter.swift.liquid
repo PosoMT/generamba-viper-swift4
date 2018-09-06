@@ -1,0 +1,30 @@
+{% include 'header' %}
+
+import UIKit
+
+class {{ module_info.name }}PresenterImpl: {{ module_info.name }}Presenter, {{ module_info.name }}InteractorOutput {
+
+    weak private var view: {{ module_info.name }}View?
+    private var interactor: {{ module_info.name }}Interactor
+    private let router: {{ module_info.name }}Router
+
+    init (view:       {{ module_info.name }}View,
+          interactor: {{ module_info.name }}Interactor,
+          router:     {{ module_info.name }}Router) 
+    {
+        self.view       = view
+        self.interactor = interactor
+        self.router     = router
+    }
+
+    // MARK: {{ module_info.name }}Presenter
+    func getTestList() {
+        interactor.getInfoForList()
+    }
+
+    // MARK: {{ module_info.name }}InteractorOutput
+    func presentInfo(info: String) {
+        view?.showInfo(info: info)
+    }
+
+}
